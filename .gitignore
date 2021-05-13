@@ -1,6 +1,7 @@
 *.csproj
 *.sln
 .vs/
+*.vsconfig
 Library/
 obj/
 Packages/
