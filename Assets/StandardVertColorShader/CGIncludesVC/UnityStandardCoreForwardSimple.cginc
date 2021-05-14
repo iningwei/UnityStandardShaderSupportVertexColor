@@ -15,7 +15,7 @@
 struct VertexOutputBaseSimple
 {
     float4 pos                          : SV_POSITION;
-    float4 tex                          : TEXCOORD0;
+    half4 tex                          : TEXCOORD0;
     half4 eyeVec                        : TEXCOORD1; // w: grazingTerm
 
     half4 ambientOrLightmapUV           : TEXCOORD2; // SH or Lightmap UV
