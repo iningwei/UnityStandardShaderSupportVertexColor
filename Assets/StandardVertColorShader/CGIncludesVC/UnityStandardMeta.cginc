@@ -20,7 +20,7 @@ struct v2f_meta
     float4 uv       : TEXCOORD0;
     float4 pos      : SV_POSITION;
 #ifndef _PERVERTEXCOLOR_OFF
-    float4 color    : COLOR;
+    half4 color    : COLOR;
 #endif
 };
 
