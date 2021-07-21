@@ -1,7 +1,7 @@
 //https://blog.csdn.net/weixin_30616969/article/details/95424748
 // Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
 
-Shader "My/Vert Color/Legacy Shaders/Transparent/Cutout/Diffuse" {
+Shader "My/VertColor/Legacy Shaders/Transparent/Cutout/Diffuse" {
 Properties {
     _Color ("Main Color", Color) = (1,1,1,1)
     _MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
