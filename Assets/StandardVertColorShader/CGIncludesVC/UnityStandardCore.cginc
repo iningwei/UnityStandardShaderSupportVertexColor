@@ -224,6 +224,7 @@ inline FragmentCommonData SpecularSetup (float4 i_tex, half3 vertColor)
     return o;
 }
 
+
 #ifdef _PERVERTEXCOLOR_OFF
 inline FragmentCommonData MetallicSetup (float4 i_tex)
 #else

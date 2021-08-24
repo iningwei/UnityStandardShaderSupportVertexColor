@@ -137,8 +137,13 @@ FragmentCommonData FragmentSetupSimple(VertexOutputBaseSimple i)
     #if defined(_ALPHATEST_ON)
         clip (alpha - _Cutoff);
     #endif
+	
 
-    FragmentCommonData s = UNITY_SETUP_BRDF_INPUT (i.tex);
+	#ifdef _PERVERTEXCOLOR_OFF
+		FragmentCommonData s = UNITY_SETUP_BRDF_INPUT (i.tex);
+	#else
+		FragmentCommonData s = UNITY_SETUP_BRDF_INPUT (i.tex,i.color);
+	#endif
 
     // NOTE: shader relies on pre-multiply alpha-blend (_SrcBlend = One, _DstBlend = OneMinusSrcAlpha)
     s.diffColor = PreMultiplyAlpha (s.diffColor, alpha, s.oneMinusReflectivity, /*out*/ s.alpha);
@@ -331,8 +336,12 @@ FragmentCommonData FragmentSetupSimpleAdd(VertexOutputForwardAddSimple i)
     #if defined(_ALPHATEST_ON)
         clip (alpha - _Cutoff);
     #endif
-
-    FragmentCommonData s = UNITY_SETUP_BRDF_INPUT (i.tex);
+	
+	#ifdef _PERVERTEXCOLOR_OFF
+		FragmentCommonData s = UNITY_SETUP_BRDF_INPUT (i.tex);
+	#else
+		FragmentCommonData s = UNITY_SETUP_BRDF_INPUT (i.tex,i.color);
+	#endif
 
     // NOTE: shader relies on pre-multiply alpha-blend (_SrcBlend = One, _DstBlend = OneMinusSrcAlpha)
     s.diffColor = PreMultiplyAlpha (s.diffColor, alpha, s.oneMinusReflectivity, /*out*/ s.alpha);
